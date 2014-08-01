@@ -1,0 +1,42 @@
+CREATE TABLE clientes (
+    documento character varying(15) NOT NULL,
+    nombre character varying(40),
+    apellido character varying(40),
+    telefono character varying(30),
+    direccion character varying(30),
+    correo character varying(40)
+);
+
+
+
+
+CREATE TABLE materiales (
+    codigo character varying(15) NOT NULL,
+    nombre character varying(40),
+    tipo character varying(40),
+    cantidad character varying(10),
+    color character varying(30),
+    costo character varying(20)
+);
+
+
+
+
+CREATE TABLE socios (
+    codigo character varying(20) NOT NULL,
+    documento character varying(20),
+    nombre character varying(40),
+    apellidos character varying(40),
+    direccion character varying(30),
+    cargo character varying(30)
+);
+
+
+
+CREATE TABLE surtidor (
+    codigo character varying(15) NOT NULL,
+    nombre character varying(40),
+    direccion character varying(30),
+    correo character varying(40),
+    tipo character varying(40)
+);

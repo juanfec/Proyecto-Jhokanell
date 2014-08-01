@@ -1,0 +1,117 @@
+<html>
+<head>
+	<title>Tabllas Jhokanell</title>
+</head>
+<body>
+	<center><h1>Tablas base de datos</h1></center>
+	<div style="height:265px;">
+		<div style="float:left;">
+			<form action="materiales.php" method="post">
+				<h2>Materiales</h2>
+				<input type="text" name="codigo" placeholder="codigo"><br>
+				<input type="text" name="nombre" placeholder="nombre"><br>
+				<input type="text" name="tipo" placeholder="tipo"><br>
+				<input type="text" name="cantidad" placeholder="cantidad"><br>
+				<input type="text" name="color" placeholder="color"><br>
+				<input type="text" name="costo" placeholder="costo"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>	
+		<div style="float:left;">
+			<form action="clientes.php" method="post">
+				<h2>clientes</h2>
+				<input type="text" name="documento" placeholder="documento"><br>
+				<input type="text" name="nombre" placeholder="nombre"><br>
+				<input type="text" name="apellido" placeholder="apellido"><br>
+				<input type="text" name="telefono" placeholder="telefono"><br>
+				<input type="text" name="direccion" placeholder="direccion"><br>
+				<input type="text" name="correo" placeholder="correo"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>	
+		<div style="float:left;">
+			<form action="surtidor.php" method="post">
+				<h2>Surtidor</h2>
+				<input type="text" name="codigo" placeholder="codigo"><br>
+				<input type="text" name="nombre" placeholder="nombre"><br>
+				<input type="text" name="direccion" placeholder="direccion"><br>
+				<input type="text" name="tipo" placeholder="tipo"><br>
+				<input type="text" name="correo" placeholder="correo"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>
+		<div style="float:left;">
+			<form action="socios.php" method="post">
+				<h2>Socios</h2>
+				<input type="text" name="codigo" placeholder="codigo"><br>
+				<input type="text" name="documento" placeholder="documento"><br>
+				<input type="text" name="nombre" placeholder="nombre"><br>
+				<input type="text" name="apellidos" placeholder="apellidos"><br>
+				<input type="text" name="direccion" placeholder="direccion"><br>
+				<input type="text" name="cargo" placeholder="cargo"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>
+		<div style="float:left;">
+			<form action="articulos.php" method="post">
+				<h2>Articulos</h2>
+				<input type="text" name="codigo" placeholder="codigo"><br>
+				<input type="text" name="tipo" placeholder="tipo"><br>
+				<input type="text" name="costo" placeholder="costo"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>
+		<div style="float:left;">
+			<form action="facturas.php" method="post">
+				<h2>Facturas</h2>
+				<input type="text" name="codigofac" placeholder="codigo factura"><br>
+				<input type="text" name="codigosur" placeholder="codigo surtidor"><br>
+				<input type="text" name="nombres" placeholder="nombres"><br>
+				<input type="text" name="cantidad" placeholder="cantidad"><br>
+				<input type="text" name="costo" placeholder="costo"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>
+		<div style="float:left;">
+			<form action="facturaSclientes.php" method="post">
+				<h2>Factura cliente</h2>
+				<input type="text" name="codigo" placeholder="codigo"><br>
+				<input type="text" name="docclien" placeholder="documento cliente"><br>
+				<input type="text" name="nombreclien" placeholder="nombre cliente"><br>
+				<input type="text" name="direccion" placeholder="direccion"><br>
+				<input type="text" name="costo" placeholder="costo"><br>
+
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>
+		<div style="float:left;">
+			<form action="fabricado.php" method="post">
+				<h2>Fabricado</h2>
+				<input type="text" name="codigomat" placeholder="codigo material"><br>
+				<input type="text" name="codigoart" placeholder="codigo articulo"><br>
+				<input type="text" name="direccion" placeholder="direccion"><br>
+				<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+			</form>
+		</div>
+	</div>
+	<div style="float:left;">
+		<form action="pedido.php" method="post">
+			<h2>Pedido</h2>
+			<input type="text" name="codigoart" placeholder="codigo articulo"><br>
+			<input type="text" name="codigofact" placeholder="codigo factura"><br>
+			<input type="text" name="cantidad" placeholder="cantidad"><br>
+			<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+		</form>
+	</div>
+	<div style="float:left;">
+		<form action="surtidormaterial.php" method="post">
+			<h2>Surtidor material</h2>
+			<input type="text" name="codigosurt" placeholder="codigo surtidor"><br>
+			<input type="text" name="codigomat" placeholder="codigo material"><br>
+			<input type="text" name="cantidad" placeholder="cantidad"><br>
+			<center><input type="submit" value="enviar"><input type="reset" value="borrar"></center>
+		</form>
+	</div>
+
+</body>
+</html>
