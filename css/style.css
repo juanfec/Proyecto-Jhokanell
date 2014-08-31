@@ -33,6 +33,10 @@ body{
 	height: 173px;
 }
 
+#tablas td{
+  width: 40px;
+}
+
 /* menu */
 #cssmenu li,
 #cssmenu span,

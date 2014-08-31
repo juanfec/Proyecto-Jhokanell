@@ -24,7 +24,20 @@
 			         <li class='has-sub '><a href='listarsurtidormaterial.php'><span>Listar material</span></a></li>
 			      </ul>
 			   </li>
-			   <li><a href='tablas.php'><span>Modificar informacion</span></a></li>
+			   <li class='has-sub'><a href='#'><span>Modificar informacion</span></a>
+			   	<ul>
+			         <li class='has-sub '><a href='modificarsocios.php'><span>Modificar socios</span></a></li>
+			         <li class='has-sub '><a href='modificararticulos.php'><span>Modificar articulos</span></a></li>
+			         <li class='has-sub '><a href='modificarclientes.php'><span>Modificar clientes</span></a></li>
+			         <li class='has-sub '><a href='modificarfabricado.php'><span>Modificar fabricado</span></a></li>
+			         <li class='has-sub '><a href='modificarfacturacliente.php'><span>Modificar factura cliente</span></a></li>
+			         <li class='has-sub '><a href='modificarfacturas.php'><span>Modificar facturas</span></a></li>
+			         <li class='has-sub '><a href='modificarmateriales.php'><span>Modificar materiales</span></a></li>
+			         <li class='has-sub '><a href='modificarpedidos.php'><span>Modificar pedidos</span></a></li>
+			         <li class='has-sub '><a href='modificarsurtidores.php'><span>Modificar surtidores</span></a></li>
+			         <li class='has-sub '><a href='modificarsurtidormaterial.php'><span>Modificar material</span></a></li>
+			      </ul>
+			   </li>
 			   <li class='has-sub'><a href='#'><span>Insertar informacion</span></a>
 			   	<ul>
 			         <li class='has-sub '><a href='insertarsocios.php'><span>Insertar socios</span></a></li>
