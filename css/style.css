@@ -10,8 +10,7 @@ body{
 
 	margin: 70px 40px 0 40px;
 	padding: 26px 40px 25px 40px;
-	background:url(../images/fondo6.png) no-repeat center 0;
-	background-size: 100% 100%;
+	background:url(../images/bg.gif) 50% 0;
 	min-height:100%;
 	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;

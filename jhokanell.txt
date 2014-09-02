@@ -1,0 +1,417 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: articulo; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE articulo (
+    codigoart character varying(20) NOT NULL,
+    nombreart character varying(20),
+    documentosoc character varying(20),
+    colorart character varying(20),
+    tipoart character varying(20),
+    tipofabricacionart character varying(20),
+    costo integer,
+    cantidad character varying(20)
+);
+
+
+ALTER TABLE public.articulo OWNER TO postgres;
+
+--
+-- Name: cliart; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cliart (
+    codigofcli character varying(20) NOT NULL,
+    codigoart character varying(2),
+    documentosoc character varying(20) NOT NULL,
+    cantidad character varying(20)
+);
+
+
+ALTER TABLE public.cliart OWNER TO postgres;
+
+--
+-- Name: cliente; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cliente (
+    documentocli character varying(20) NOT NULL,
+    nombrecli character varying(20),
+    apellidocli character varying(20),
+    tipocli character varying(20),
+    direccioncli character varying(20),
+    celularcli character varying(20),
+    correocli character varying(20),
+    paiscli character varying(20)
+);
+
+
+ALTER TABLE public.cliente OWNER TO postgres;
+
+--
+-- Name: fabricado; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE fabricado (
+    codigomat character varying(20) NOT NULL,
+    codigoart character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.fabricado OWNER TO postgres;
+
+--
+-- Name: facturacli; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE facturacli (
+    codigofcli character varying(20) NOT NULL,
+    documentosoc character varying(20),
+    documentofcli character varying(20),
+    costofcli integer,
+    fechafcli date
+);
+
+
+ALTER TABLE public.facturacli OWNER TO postgres;
+
+--
+-- Name: facturasur; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE facturasur (
+    codigofsur character varying(20) NOT NULL,
+    documentosur character varying(20) NOT NULL,
+    nombresur character varying(6),
+    direccionsur character varying(13),
+    costofsur character varying,
+    fechafsur date
+);
+
+
+ALTER TABLE public.facturasur OWNER TO postgres;
+
+--
+-- Name: material; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE material (
+    codigomat character varying(20) NOT NULL,
+    nombremat character varying(20),
+    tipomat character varying(20),
+    colormat character varying(20),
+    costomat integer
+);
+
+
+ALTER TABLE public.material OWNER TO postgres;
+
+--
+-- Name: socio; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE socio (
+    documentosoc character varying(20) NOT NULL,
+    nombresoc character varying(20),
+    apellidosoc character varying(20),
+    direccionsoc character varying(20),
+    celularsoc character varying(20),
+    correosoc character varying(20),
+    epssoc character varying(20),
+    estadocivilsoc character varying(20),
+    cargosoc character varying(20),
+    fechacontratosoc character varying(20)
+);
+
+
+ALTER TABLE public.socio OWNER TO postgres;
+
+--
+-- Name: surmat; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE surmat (
+    documentosur character varying(20) NOT NULL,
+    codigomat character varying(20) NOT NULL,
+    cantidad integer
+);
+
+
+ALTER TABLE public.surmat OWNER TO postgres;
+
+--
+-- Name: surtidor; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE surtidor (
+    documentosur character varying(20) NOT NULL,
+    nombresur character varying(20),
+    apellidosur character varying(20),
+    direccionsur character varying(20),
+    celularsur character varying(20),
+    correosur character varying(20),
+    tiposur character varying(20),
+    pais character varying(20),
+    empresasur character varying(20)
+);
+
+
+ALTER TABLE public.surtidor OWNER TO postgres;
+
+--
+-- Data for Name: articulo; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: cliart; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: fabricado; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: facturacli; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: facturasur; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: material; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: socio; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: surmat; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: surtidor; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Name: articulo_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY articulo
+    ADD CONSTRAINT articulo_pkey PRIMARY KEY (codigoart);
+
+
+--
+-- Name: cliente_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cliente
+    ADD CONSTRAINT cliente_pkey PRIMARY KEY (documentocli);
+
+
+--
+-- Name: fabricado_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY fabricado
+    ADD CONSTRAINT fabricado_pkey PRIMARY KEY (codigomat, codigoart);
+
+
+--
+-- Name: facturacli_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY facturacli
+    ADD CONSTRAINT facturacli_pkey PRIMARY KEY (codigofcli);
+
+
+--
+-- Name: facturasur_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY facturasur
+    ADD CONSTRAINT facturasur_pkey PRIMARY KEY (codigofsur, documentosur);
+
+
+--
+-- Name: material_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY material
+    ADD CONSTRAINT material_pkey PRIMARY KEY (codigomat);
+
+
+--
+-- Name: socio_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY socio
+    ADD CONSTRAINT socio_pkey PRIMARY KEY (documentosoc);
+
+
+--
+-- Name: surmat_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY surmat
+    ADD CONSTRAINT surmat_pkey PRIMARY KEY (documentosur, codigomat);
+
+
+--
+-- Name: surtidor_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY surtidor
+    ADD CONSTRAINT surtidor_pkey PRIMARY KEY (documentosur);
+
+
+--
+-- Name: usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cliart
+    ADD CONSTRAINT usuario_pkey PRIMARY KEY (codigofcli);
+
+
+--
+-- Name: articulo_documentosoc_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY articulo
+    ADD CONSTRAINT articulo_documentosoc_fkey FOREIGN KEY (documentosoc) REFERENCES socio(documentosoc);
+
+
+--
+-- Name: cliart_codigoart_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cliart
+    ADD CONSTRAINT cliart_codigoart_fkey FOREIGN KEY (codigoart) REFERENCES articulo(codigoart);
+
+
+--
+-- Name: cliart_codigofcli_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cliart
+    ADD CONSTRAINT cliart_codigofcli_fkey FOREIGN KEY (codigofcli) REFERENCES facturacli(codigofcli);
+
+
+--
+-- Name: fabricado_codigoart_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY fabricado
+    ADD CONSTRAINT fabricado_codigoart_fkey FOREIGN KEY (codigoart) REFERENCES articulo(codigoart);
+
+
+--
+-- Name: fabricado_codigomat_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY fabricado
+    ADD CONSTRAINT fabricado_codigomat_fkey FOREIGN KEY (codigomat) REFERENCES material(codigomat);
+
+
+--
+-- Name: facturacli_documentosoc_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY facturacli
+    ADD CONSTRAINT facturacli_documentosoc_fkey FOREIGN KEY (documentosoc) REFERENCES socio(documentosoc);
+
+
+--
+-- Name: facturasur_documentosur_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY facturasur
+    ADD CONSTRAINT facturasur_documentosur_fkey FOREIGN KEY (documentosur) REFERENCES surtidor(documentosur);
+
+
+--
+-- Name: surmat_codigomat_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY surmat
+    ADD CONSTRAINT surmat_codigomat_fkey FOREIGN KEY (codigomat) REFERENCES material(codigomat);
+
+
+--
+-- Name: surmat_documentosur_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY surmat
+    ADD CONSTRAINT surmat_documentosur_fkey FOREIGN KEY (documentosur) REFERENCES surtidor(documentosur);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
