@@ -1,6 +1,6 @@
 ﻿<header>
 			<div id="logo">
-			<img align="center" src="images/logo.png" alt="logo" width="322" height="173"/>
+			<img align="center" src="images/logo2.png" alt="logo" width="322" height="173"/>
 			</div>
 		</header>
 		<nav>
@@ -52,7 +52,7 @@
 			         <li class='has-sub '><a href='insertarsurtidormaterial.php'><span>Insertar material</span></a></li>
 			      </ul>
 			   </li>
-			   <li><a href='contacto.php'><span>Contactenos</span></a></li>
+			   <li><a href='iniciarsesion.php'><span>Iniciar</span></a></li>
 			   <li><a href='https://www.facebook.com/JHOKANELL'><span>Redes sociales</span></a></li>
 			</ul>
 		</div>
